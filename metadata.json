@@ -1,0 +1,6 @@
+{
+  "name": "Eiscafé Ambiente",
+  "description": "Offizielle Website des Eiscafé Ambiente in Pößneck, Thüringen. Leckeres Eis, Kaffeespezialitäten, Kuchen und gemütliche Atmosphäre in der Kurzackerstraße 10.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
