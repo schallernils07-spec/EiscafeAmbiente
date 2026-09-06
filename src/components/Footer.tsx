@@ -163,20 +163,20 @@ export const Footer: React.FC = () => {
 
                   <h4 className="font-bold text-base text-[#2d2d2d]">Angaben gemäß § 5 TMG</h4>
                   <p>
-                    <strong>Eiscafé Ambiente</strong><br />
-                    Kurzackerstraße 10<br />
+                    <strong>Nils Schaller</strong><br />
+                    Bergstraße 11<br />
                     07381 Pößneck<br />
                     Thüringen, Deutschland
                   </p>
 
                   <h4 className="font-bold text-base text-[#2d2d2d]">Vertreten durch:</h4>
-                  <p>[Name des Inhabers / der Inhaberin vom Eiscafé Ambiente hier eintragen]</p>
+                  <p>Nils Schaller</p>
 
                   <h4 className="font-bold text-base text-[#2d2d2d]">Kontakt</h4>
                   <p>
-                    Telefon: 03647 445330<br />
-                    Mobil: 0163 2124808<br />
-                    E-Mail: [E-Mail-Adresse des Eiscafés hier eintragen]
+                    Telefon: +49 1515 9157627<br />
+                    Mobil: +49 1515 9157627<br />
+                    E-Mail: schallernils07@gmail.com
                   </p>
 
                   <h4 className="font-bold text-base text-[#2d2d2d]">Umsatzsteuer-ID:</h4>
@@ -200,10 +200,10 @@ export const Footer: React.FC = () => {
 
                   <h4 className="font-bold text-base text-[#2d2d2d]">2. Verantwortliche Stelle</h4>
                   <p>
-                    Eiscafé Ambiente<br />
-                    Kurzackerstraße 10<br />
+                    Nils Schaller<br />
+                    Bergstraße 11<br />
                     07381 Pößneck<br />
-                    Telefon: 03647 445330
+                    Telefon: +49 1515 9157627
                   </p>
 
                   <h4 className="font-bold text-base text-[#2d2d2d]">3. Hosting & Bereitstellung der Website</h4>
