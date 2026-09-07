@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MapPin, Navigation, Copy, Check, ExternalLink } from 'lucide-react';
+import { MapPin, Navigation, Copy, Check, ExternalLink, Camera } from 'lucide-react';
 import { CAFE_DATA } from '../data/cafeData';
 
 export const LocationMap: React.FC = () => {
@@ -71,7 +71,7 @@ export const LocationMap: React.FC = () => {
                 <button
                   type="button"
                   onClick={handleCopy}
-                  className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#f4efe8] hover:bg-[#eeeae4] text-[#4a3728] text-sm font-medium border border-[#eeeae4] transition-colors"
+                  className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#f4efe8] hover:bg-[#eeeae4] text-[#4a3728] text-sm font-medium border border-[#eeeae4] transition-colors cursor-pointer"
                   aria-label="Adresse kopieren"
                 >
                   {copied ? (
@@ -86,6 +86,18 @@ export const LocationMap: React.FC = () => {
                     </>
                   )}
                 </button>
+
+                <a
+                  href={CAFE_DATA.googleMapsPhotosUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-white hover:bg-[#fdfbf7] text-[#4a3728] text-sm font-medium border border-[#ddd6cd] transition-colors"
+                  aria-label="Standortfotos und Rezensionen auf Google Maps ansehen"
+                >
+                  <Camera className="w-4 h-4 text-[#8b7e74]" />
+                  <span>Fotos & Rezensionen auf Google Maps</span>
+                  <ExternalLink className="w-3.5 h-3.5 opacity-70 ml-0.5" />
+                </a>
               </div>
 
               {/* Quick hints */}

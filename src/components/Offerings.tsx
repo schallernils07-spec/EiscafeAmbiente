@@ -1,8 +1,17 @@
 import React from 'react';
 import { Sparkles } from 'lucide-react';
 import { CAFE_OFFERINGS } from '../data/cafeData';
+import { useCafeImages, SlotId } from '../context/CafeImageContext';
 
 export const Offerings: React.FC = () => {
+  const { getImageUrl, getImageAlt } = useCafeImages();
+
+  const slotMapping: Record<string, SlotId> = {
+    eis: 'kiwibecher',
+    kaffee: 'lattemacchiato',
+    kuchen: 'windbeutel',
+  };
+
   return (
     <section id="genuss" className="py-16 sm:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -22,22 +31,27 @@ export const Offerings: React.FC = () => {
 
         {/* 3 requested cards: Eis, Kaffee, Kuchen & Süßes */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-6 lg:gap-8">
-          {CAFE_OFFERINGS.map((item) => (
-            <div
-              key={item.id}
-              className="group bg-white rounded-xl overflow-hidden border border-[#eeeae4] shadow-xs hover:shadow-sm transition-all duration-300 flex flex-col"
-            >
-              {/* Image Frame */}
-              <div className="relative aspect-4/3 overflow-hidden bg-[#f4efe8]">
-                <img
-                  src={item.image}
-                  alt={item.alt}
-                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500 ease-out"
-                  loading="lazy"
-                  referrerPolicy="no-referrer"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/35 to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
-              </div>
+          {CAFE_OFFERINGS.map((item) => {
+            const slotId = slotMapping[item.id];
+            const imageUrl = slotId ? getImageUrl(slotId) : item.image;
+            const imageAlt = slotId ? getImageAlt(slotId) : item.alt;
+
+            return (
+              <div
+                key={item.id}
+                className="group bg-white rounded-xl overflow-hidden border border-[#eeeae4] shadow-xs hover:shadow-sm transition-all duration-300 flex flex-col"
+              >
+                {/* Image Frame */}
+                <div className="relative aspect-4/3 overflow-hidden bg-[#f4efe8]">
+                  <img
+                    src={imageUrl}
+                    alt={imageAlt}
+                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500 ease-out"
+                    loading="lazy"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/35 to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
+                </div>
 
               {/* Content Body */}
               <div className="p-6 sm:p-7 flex-1 flex flex-col justify-between">
@@ -58,8 +72,9 @@ export const Offerings: React.FC = () => {
                 </div>
               </div>
             </div>
-          ))}
-        </div>
+          );
+        })}
+      </div>
 
         {/* Note about freshness and local feel */}
         <div className="mt-12 text-center text-xs sm:text-sm text-[#6e6359] max-w-xl mx-auto bg-[#f4efe8] p-4 rounded-xl border border-[#eeeae4]">

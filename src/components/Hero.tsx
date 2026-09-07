@@ -1,9 +1,11 @@
 import React from 'react';
 import { Navigation, Phone, MapPin, Star, Clock, Coffee } from 'lucide-react';
 import { CAFE_DATA, getOpeningStatus } from '../data/cafeData';
+import { useCafeImages } from '../context/CafeImageContext';
 
 export const Hero: React.FC = () => {
   const status = getOpeningStatus();
+  const { getImageUrl, getImageAlt } = useCafeImages();
 
   return (
     <section className="relative pt-28 sm:pt-32 pb-16 sm:pb-24 overflow-hidden" id="start">
@@ -98,8 +100,8 @@ export const Hero: React.FC = () => {
               {/* Main Image Card */}
               <div className="relative rounded-2xl overflow-hidden shadow-xs border border-[#eeeae4] bg-white aspect-4/3 sm:aspect-5/4">
                 <img
-                  src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=1200&q=85"
-                  alt="Appetitlicher Eisbecher mit cremigem Eis und frischen Früchten im Eiscafé Ambiente"
+                  src={getImageUrl('erdbeerbecher')}
+                  alt={getImageAlt('erdbeerbecher')}
                   className="w-full h-full object-cover transform hover:scale-102 transition-transform duration-700 ease-out"
                   loading="eager"
                   referrerPolicy="no-referrer"

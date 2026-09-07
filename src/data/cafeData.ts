@@ -32,6 +32,8 @@ export const CAFE_DATA: CafeInfo = {
   googleMapsUrl: 'https://www.google.com/maps/dir/?api=1&destination=Kurzackerstra%C3%9Fe+10,+07381+P%C3%B6%C3%9Fneck',
   // Karten-Ansicht Embed URL
   googleMapsEmbedUrl: 'https://maps.google.com/maps?q=Kurzackerstra%C3%9Fe+10,+07381+P%C3%B6%C3%9Fneck&t=&z=16&ie=UTF8&iwloc=&output=embed',
+  // Google Maps Fotos & Rezensionen Übersicht
+  googleMapsPhotosUrl: 'https://www.google.com/maps/search/?api=1&query=Eiscaf%C3%A9+Ambiente+Kurzackerstra%C3%9Fe+10+P%C3%B6%C3%9Fneck',
   // ZENTRALE ÖFFNUNGSZEITEN (Montag Ruhetag, Di-So 13:00 - 17:30)
   openingHours: [
     {
@@ -164,75 +166,71 @@ export const CAFE_OFFERINGS: OfferingItem[] = [
     id: 'eis',
     title: 'Eis',
     description: 'Leckeres Eis für kleine und große Eisliebhaber.',
-    image: 'https://images.unsplash.com/photo-1501443762994-82bd5dace89a?auto=format&fit=crop&w=800&q=80',
-    alt: 'Appetitliche Auswahl an feinstem Eis im Glas serviert',
+    image: '/images/kiwi-eisbecher.jpg',
+    alt: 'Hausgemachter bunter Eisbecher mit Sahne und frischen Früchten im Eiscafé Ambiente',
     accentColor: '#D9822B',
   },
   {
     id: 'kaffee',
     title: 'Kaffee',
     description: 'Kaffee und Kaffeespezialitäten für eine gemütliche Auszeit.',
-    image: 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80',
-    alt: 'Frisch gebrühter aromatischer Kaffee mit samtigem Schaum',
+    image: '/images/latte-torte.jpg',
+    alt: 'Frisch zubereiteter Latte Macchiato mit feinem Milchschaum im Eiscafé Ambiente',
     accentColor: '#8C5332',
   },
   {
     id: 'kuchen',
     title: 'Kuchen & Süßes',
     description: 'Etwas Süßes zum Kaffee oder einfach für zwischendurch.',
-    image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=800&q=80',
-    alt: 'Hausgemachter frischer Kuchen und feine süße Spezialitäten',
+    image: '/images/windbeutel-kuchen.jpg',
+    alt: 'Hausgebackener Sahne-Windbeutel und Kuchen im Eiscafé Ambiente',
     accentColor: '#A06D53',
   },
 ];
 
 /**
  * BILDERGALERIE
- * HINWEIS FÜR DEN BETREIBER DES EISCAFÉ AMBIENTE:
- * Hier können die Platzhalter-URLs ganz unkompliziert durch echte Fotografien aus dem
- * Eiscafé (z.B. Gastraum, Theke, Eisbecher, Außenbereich in der Kurzackerstraße) ersetzt werden.
+ * Verwendet ausschließlich die 5 Originalaufnahmen des Eiscafé Ambiente:
+ * 1. Theke & Innenraum
+ * 2. Erdbeer-Eisbecher
+ * 3. Bunter Eisbecher im Kelchglas
+ * 4. Latte Macchiato & Torte
+ * 5. Windbeutel & Kuchen
  */
 export const GALLERY_PHOTOS: GalleryPhoto[] = [
   {
-    id: 'photo-1',
-    title: 'Feine Eisbecher & Genuss',
-    category: 'Eis & Spezialitäten',
-    imageUrl: 'https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=800&q=80',
-    alt: 'Köstlich garnierter Eisbecher mit Früchten',
+    id: 'photo-theke',
+    title: 'Eistheke, Vitrine & Café-Ambiente',
+    category: 'Unser Café',
+    imageUrl: '/images/ambiente-theke.jpg',
+    alt: 'Die gemütliche Eistheke und Kuchenvitrine im Eiscafé Ambiente Pößneck',
   },
   {
-    id: 'photo-2',
-    title: 'Gemütliches Beisammensein',
-    category: 'Café-Atmosphäre',
-    imageUrl: 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=800&q=80',
-    alt: 'Helles, gemütliches Café-Ambiente mit Tischen und angenehmer Stimmung',
+    id: 'photo-erdbeer',
+    title: 'Klassischer Erdbeer-Eisbecher',
+    category: 'Eisspezialitäten',
+    imageUrl: '/images/erdbeer-eisbecher.jpg',
+    alt: 'Frischer Erdbeer-Eisbecher mit Sahne, Waffel und Minze im Glas serviert',
   },
   {
-    id: 'photo-3',
-    title: 'Aromatische Kaffeespezialitäten',
-    category: 'Kaffee',
-    imageUrl: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=800&q=80',
-    alt: 'Frische Kaffeespezialität im eleganten Glas',
+    id: 'photo-kiwi',
+    title: 'Fruchtiger Eisbecher im Kelchglas',
+    category: 'Eisspezialitäten',
+    imageUrl: '/images/kiwi-eisbecher.jpg',
+    alt: 'Bunter Eisbecher mit feiner Sahne, Früchten und Waffel im hohen Eisglas',
   },
   {
-    id: 'photo-4',
-    title: 'Süße Köstlichkeiten & Kuchen',
+    id: 'photo-latte',
+    title: 'Latte Macchiato & Torte',
+    category: 'Kaffee & Torten',
+    imageUrl: '/images/latte-torte.jpg',
+    alt: 'Geschichteter Latte Macchiato und ein Stück feine Torte auf dem Cafétisch',
+  },
+  {
+    id: 'photo-windbeutel',
+    title: 'Großer Sahne-Windbeutel & Kuchen',
     category: 'Kuchen & Gebäck',
-    imageUrl: 'https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?auto=format&fit=crop&w=800&q=80',
-    alt: 'Verlockendes Stück Kuchen für den Nachmittagskaffee',
-  },
-  {
-    id: 'photo-5',
-    title: 'Erfrischendes Eisvergnügen',
-    category: 'Eis & Spezialitäten',
-    imageUrl: 'https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?auto=format&fit=crop&w=800&q=80',
-    alt: 'Bunte Auswahl cremiger Eiskugeln in der Waffel',
-  },
-  {
-    id: 'photo-6',
-    title: 'Eine entspannte Pause in Pößneck',
-    category: 'Auszeit',
-    imageUrl: 'https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=800&q=80',
-    alt: 'Wohlfühl-Atmosphäre bei einer Tasse Kaffee im Café',
+    imageUrl: '/images/windbeutel-kuchen.jpg',
+    alt: 'Großer, mit frischer Sahne gefüllter Windbeutel und saftiger Kuchen',
   },
 ];

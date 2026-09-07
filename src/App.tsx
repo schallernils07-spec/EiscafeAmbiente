@@ -16,6 +16,7 @@ import { Contact } from './components/Contact';
 import { Reviews } from './components/Reviews';
 import { CallToAction } from './components/CallToAction';
 import { Footer } from './components/Footer';
+import { CafeImageProvider } from './context/CafeImageContext';
 import { CAFE_DATA } from './data/cafeData';
 
 export default function App() {
@@ -34,14 +35,15 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#fdfbf7] text-[#2d2d2d] flex flex-col selection:bg-[#eeeae4] selection:text-[#4a3728]">
-      {/* Sticky Header Navigation */}
-      <Navbar />
+    <CafeImageProvider>
+      <div className="min-h-screen bg-[#fdfbf7] text-[#2d2d2d] flex flex-col selection:bg-[#eeeae4] selection:text-[#4a3728]">
+        {/* Sticky Header Navigation */}
+        <Navbar />
 
-      {/* Main Content Sections */}
-      <main className="flex-1">
-        {/* 1. Hero */}
-        <Hero />
+        {/* Main Content Sections */}
+        <main className="flex-1">
+          {/* 1. Hero */}
+          <Hero />
 
         {/* 2. Über uns */}
         <About />
@@ -102,6 +104,7 @@ export default function App() {
         </button>
       )}
     </div>
+    </CafeImageProvider>
   );
 }
 

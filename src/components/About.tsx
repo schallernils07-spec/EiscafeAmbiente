@@ -1,8 +1,11 @@
 import React from 'react';
 import { Heart, Coffee, Sparkles, MapPin } from 'lucide-react';
 import { CAFE_DATA } from '../data/cafeData';
+import { useCafeImages } from '../context/CafeImageContext';
 
 export const About: React.FC = () => {
+  const { getImageUrl, getImageAlt } = useCafeImages();
+
   return (
     <section id="ueber-uns" className="py-16 sm:py-24 bg-[#f4efe8]/50 border-y border-[#eeeae4]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -12,8 +15,8 @@ export const About: React.FC = () => {
             <div className="relative">
               <div className="relative rounded-xl overflow-hidden shadow-sm border border-[#eeeae4] bg-white">
                 <img
-                  src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=900&q=80"
-                  alt="Gemütliche Café-Atmosphäre im Eiscafé Ambiente Pößneck"
+                  src={getImageUrl('theke')}
+                  alt={getImageAlt('theke')}
                   className="w-full h-80 sm:h-96 object-cover"
                   loading="lazy"
                   referrerPolicy="no-referrer"
@@ -23,8 +26,8 @@ export const About: React.FC = () => {
               {/* Secondary inset photo */}
               <div className="absolute -bottom-6 -right-4 sm:-right-6 w-44 sm:w-52 rounded-xl overflow-hidden shadow-md border-2 border-white hidden sm:block">
                 <img
-                  src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=500&q=80"
-                  alt="Frisch zubereitete Kaffeespezialität"
+                  src={getImageUrl('lattemacchiato')}
+                  alt={getImageAlt('lattemacchiato')}
                   className="w-full h-32 sm:h-36 object-cover"
                   loading="lazy"
                   referrerPolicy="no-referrer"

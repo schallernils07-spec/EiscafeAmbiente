@@ -32,6 +32,7 @@ export interface CafeInfo {
   };
   googleMapsUrl: string;
   googleMapsEmbedUrl: string;
+  googleMapsPhotosUrl: string;
   openingHours: DayOpeningHour[];
 }
 
