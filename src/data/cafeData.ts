@@ -1,4 +1,9 @@
 import { CafeInfo, OfferingItem, GalleryPhoto, DayOpeningHour } from '../types';
+import thekeImg from '../assets/images/ambiente-theke.jpg';
+import erdbeerImg from '../assets/images/erdbeer-eisbecher.jpg';
+import kiwiImg from '../assets/images/kiwi-eisbecher.jpg';
+import latteImg from '../assets/images/latte-torte.jpg';
+import windbeutelImg from '../assets/images/windbeutel-kuchen.jpg';
 
 /**
  * ZENTRALE DATENSTRUKTUR FÜR DAS EISCAFÉ AMBIENTE
@@ -166,7 +171,7 @@ export const CAFE_OFFERINGS: OfferingItem[] = [
     id: 'eis',
     title: 'Eis',
     description: 'Leckeres Eis für kleine und große Eisliebhaber.',
-    image: '/images/kiwi-eisbecher.jpg',
+    image: kiwiImg,
     alt: 'Hausgemachter bunter Eisbecher mit Sahne und frischen Früchten im Eiscafé Ambiente',
     accentColor: '#D9822B',
   },
@@ -174,7 +179,7 @@ export const CAFE_OFFERINGS: OfferingItem[] = [
     id: 'kaffee',
     title: 'Kaffee',
     description: 'Kaffee und Kaffeespezialitäten für eine gemütliche Auszeit.',
-    image: '/images/latte-torte.jpg',
+    image: latteImg,
     alt: 'Frisch zubereiteter Latte Macchiato mit feinem Milchschaum im Eiscafé Ambiente',
     accentColor: '#8C5332',
   },
@@ -182,7 +187,7 @@ export const CAFE_OFFERINGS: OfferingItem[] = [
     id: 'kuchen',
     title: 'Kuchen & Süßes',
     description: 'Etwas Süßes zum Kaffee oder einfach für zwischendurch.',
-    image: '/images/windbeutel-kuchen.jpg',
+    image: windbeutelImg,
     alt: 'Hausgebackener Sahne-Windbeutel und Kuchen im Eiscafé Ambiente',
     accentColor: '#A06D53',
   },
@@ -202,35 +207,35 @@ export const GALLERY_PHOTOS: GalleryPhoto[] = [
     id: 'photo-theke',
     title: 'Eistheke, Vitrine & Café-Ambiente',
     category: 'Unser Café',
-    imageUrl: '/images/ambiente-theke.jpg',
+    imageUrl: thekeImg,
     alt: 'Die gemütliche Eistheke und Kuchenvitrine im Eiscafé Ambiente Pößneck',
   },
   {
     id: 'photo-erdbeer',
     title: 'Klassischer Erdbeer-Eisbecher',
     category: 'Eisspezialitäten',
-    imageUrl: '/images/erdbeer-eisbecher.jpg',
+    imageUrl: erdbeerImg,
     alt: 'Frischer Erdbeer-Eisbecher mit Sahne, Waffel und Minze im Glas serviert',
   },
   {
     id: 'photo-kiwi',
     title: 'Fruchtiger Eisbecher im Kelchglas',
     category: 'Eisspezialitäten',
-    imageUrl: '/images/kiwi-eisbecher.jpg',
+    imageUrl: kiwiImg,
     alt: 'Bunter Eisbecher mit feiner Sahne, Früchten und Waffel im hohen Eisglas',
   },
   {
     id: 'photo-latte',
     title: 'Latte Macchiato & Torte',
     category: 'Kaffee & Torten',
-    imageUrl: '/images/latte-torte.jpg',
+    imageUrl: latteImg,
     alt: 'Geschichteter Latte Macchiato und ein Stück feine Torte auf dem Cafétisch',
   },
   {
     id: 'photo-windbeutel',
     title: 'Großer Sahne-Windbeutel & Kuchen',
     category: 'Kuchen & Gebäck',
-    imageUrl: '/images/windbeutel-kuchen.jpg',
+    imageUrl: windbeutelImg,
     alt: 'Großer, mit frischer Sahne gefüllter Windbeutel und saftiger Kuchen',
   },
 ];

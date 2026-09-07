@@ -4,6 +4,11 @@ import {
   saveImageToStorage,
   removeImageFromStorage,
 } from '../utils/imageStorage';
+import thekeImg from '../assets/images/ambiente-theke.jpg';
+import erdbeerImg from '../assets/images/erdbeer-eisbecher.jpg';
+import kiwiImg from '../assets/images/kiwi-eisbecher.jpg';
+import latteImg from '../assets/images/latte-torte.jpg';
+import windbeutelImg from '../assets/images/windbeutel-kuchen.jpg';
 
 export type SlotId = 'theke' | 'erdbeerbecher' | 'kiwibecher' | 'lattemacchiato' | 'windbeutel';
 
@@ -24,7 +29,7 @@ const INITIAL_SLOTS: Record<SlotId, Omit<ImageSlot, 'currentUrl' | 'isOriginalUp
     title: 'Eistheke & Gastraum',
     contextUsage: 'Gastraum, Kuchenvitrine & Galerie',
     expectedFilenamePattern: '13-54-56',
-    defaultUrl: '/images/ambiente-theke.jpg',
+    defaultUrl: thekeImg,
     alt: 'Die gemütliche Eistheke und Kuchenvitrine im Eiscafé Ambiente Pößneck',
   },
   erdbeerbecher: {
@@ -32,7 +37,7 @@ const INITIAL_SLOTS: Record<SlotId, Omit<ImageSlot, 'currentUrl' | 'isOriginalUp
     title: 'Erdbeer-Eisbecher',
     contextUsage: 'Hero-Startbereich & Galerie',
     expectedFilenamePattern: '13-52-57',
-    defaultUrl: '/images/erdbeer-eisbecher.jpg',
+    defaultUrl: erdbeerImg,
     alt: 'Klassischer Erdbeer-Eisbecher mit Schlagsahne und Waffel im Eiscafé Ambiente',
   },
   kiwibecher: {
@@ -40,7 +45,7 @@ const INITIAL_SLOTS: Record<SlotId, Omit<ImageSlot, 'currentUrl' | 'isOriginalUp
     title: 'Kiwi-Eisbecher im Kelchglas',
     contextUsage: 'Angebot (Eis) & Galerie',
     expectedFilenamePattern: '13-53-15',
-    defaultUrl: '/images/kiwi-eisbecher.jpg',
+    defaultUrl: kiwiImg,
     alt: 'Bunter Kiwi-Eisbecher mit Sahne und Früchten im hohen Eisglas',
   },
   lattemacchiato: {
@@ -48,7 +53,7 @@ const INITIAL_SLOTS: Record<SlotId, Omit<ImageSlot, 'currentUrl' | 'isOriginalUp
     title: 'Latte Macchiato & Torte',
     contextUsage: 'Angebot (Kaffee) & Über uns',
     expectedFilenamePattern: '13-54-06',
-    defaultUrl: '/images/latte-torte.jpg',
+    defaultUrl: latteImg,
     alt: 'Latte Macchiato und ein Stück feine Torte auf dem Cafétisch',
   },
   windbeutel: {
@@ -56,7 +61,7 @@ const INITIAL_SLOTS: Record<SlotId, Omit<ImageSlot, 'currentUrl' | 'isOriginalUp
     title: 'Sahne-Windbeutel & Kuchen',
     contextUsage: 'Angebot (Kuchen & Süßes) & Galerie',
     expectedFilenamePattern: '13-53-39',
-    defaultUrl: '/images/windbeutel-kuchen.jpg',
+    defaultUrl: windbeutelImg,
     alt: 'Großer, mit Sahne gefüllter Windbeutel und saftiger Kuchen',
   },
 };
@@ -88,10 +93,11 @@ export const CafeImageProvider: React.FC<{ children: React.ReactNode }> = ({ chi
   const getSlot = (id: SlotId): ImageSlot => {
     const base = INITIAL_SLOTS[id];
     const original = storedImages[id];
+    const isValidOriginal = Boolean(original && original.startsWith('data:'));
     return {
       ...base,
-      currentUrl: original || base.defaultUrl,
-      isOriginalUploaded: Boolean(original),
+      currentUrl: isValidOriginal ? original : base.defaultUrl,
+      isOriginalUploaded: isValidOriginal,
     };
   };
 
